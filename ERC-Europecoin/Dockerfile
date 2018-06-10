@@ -80,6 +80,7 @@ WORKDIR /Europecoin-V3
 RUN \
 chmod +x ./autogen.sh && \
 chmod +x ./share/genbuild.sh && \
+chmod +x ./src/leveldb/build_detect_platform && \
 ./autogen.sh && \
 ./configure --with-incompatible-bdb --without-miniupnpc  && \
 make && \
@@ -88,3 +89,4 @@ make install && make clean
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
+RUN chmod +x /entrypoint.sh
