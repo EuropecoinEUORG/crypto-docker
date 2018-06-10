@@ -83,9 +83,7 @@ chmod +x ./share/genbuild.sh && \
 chmod +x ./src/leveldb/build_detect_platform && \
 ./autogen.sh && \
 ./configure --with-incompatible-bdb --without-miniupnpc  && \
-make && \
-strip src/europecoind && strip && strip src/qt/europecoin-qt  && \
-make install && make clean
+make install
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
